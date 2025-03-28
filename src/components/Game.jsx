@@ -9,7 +9,7 @@ const Game = ({ difficulty, onGameOver }) => {
   const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/get_words/${difficulty}`)
+    fetch(`https://olu-vocab-game.onrender.com/get_words/${difficulty}`)
       .then((response) => response.json())
       .then((data) => {
         console.log("Fetched Questions:", data); // Debugging line
