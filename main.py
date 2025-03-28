@@ -170,6 +170,12 @@ word_bank = {
 }
 
 
+@app.get("/", include_in_schema=False)
+@app.head("/")
+def root():
+    return {"message": "Welcome to the Vocab API!"}
+
+
 @app.get("/get_words/{difficulty}")
 def get_words(difficulty: str):
     if difficulty not in word_bank:
